@@ -1,0 +1,183 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CivicFusion Design System - Indian Government Portal Style */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@layer base {
+  :root {
+    /* Core Government Colors */
+    --background: 0 0% 98%;
+    --foreground: 220 30% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 30% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 30% 15%;
+
+    /* Deep Navy Blue - Primary Government Color */
+    --primary: 214 65% 20%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Saffron/Orange - Indian Accent */
+    --accent: 24 100% 56%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Light Gray Secondary */
+    --secondary: 210 20% 96%;
+    --secondary-foreground: 220 30% 15%;
+
+    --muted: 210 15% 94%;
+    --muted-foreground: 215 15% 45%;
+
+    /* Indian Green - Success */
+    --success: 158 70% 25%;
+    --success-foreground: 0 0% 100%;
+
+    /* Warning - Amber */
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 10%;
+
+    /* Destructive - Red */
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Status Colors */
+    --status-planned: 214 80% 52%;
+    --status-ongoing: 158 70% 38%;
+    --status-completed: 215 15% 55%;
+    --status-stalled: 0 72% 51%;
+
+    --status-open: 0 72% 51%;
+    --status-in-progress: 38 92% 50%;
+    --status-resolved: 158 70% 38%;
+
+    --priority-low: 215 15% 55%;
+    --priority-medium: 38 92% 50%;
+    --priority-high: 0 72% 51%;
+
+    /* Role Colors */
+    --role-citizen: 214 80% 52%;
+    --role-volunteer: 158 70% 38%;
+    --role-official: 24 100% 50%;
+    --role-admin: 280 60% 45%;
+
+    --border: 214 20% 88%;
+    --input: 214 20% 88%;
+    --ring: 214 65% 20%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 220 20% 14%;
+    --sidebar-foreground: 210 20% 96%;
+    --sidebar-primary: 24 100% 56%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 18% 22%;
+    --sidebar-accent-foreground: 210 20% 96%;
+    --sidebar-border: 220 15% 25%;
+    --sidebar-ring: 24 100% 56%;
+  }
+
+  .dark {
+    --background: 220 20% 10%;
+    --foreground: 210 20% 96%;
+
+    --card: 220 18% 14%;
+    --card-foreground: 210 20% 96%;
+
+    --popover: 220 18% 14%;
+    --popover-foreground: 210 20% 96%;
+
+    --primary: 214 80% 52%;
+    --primary-foreground: 0 0% 100%;
+
+    --accent: 24 100% 56%;
+    --accent-foreground: 0 0% 100%;
+
+    --secondary: 220 15% 20%;
+    --secondary-foreground: 210 20% 96%;
+
+    --muted: 220 15% 18%;
+    --muted-foreground: 215 15% 60%;
+
+    --destructive: 0 62% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 15% 25%;
+    --input: 220 15% 25%;
+    --ring: 214 80% 52%;
+
+    --sidebar-background: 220 25% 8%;
+    --sidebar-foreground: 210 20% 96%;
+    --sidebar-primary: 24 100% 56%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 20% 15%;
+    --sidebar-accent-foreground: 210 20% 96%;
+    --sidebar-border: 220 15% 20%;
+    --sidebar-ring: 24 100% 56%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+}
+
+@layer utilities {
+  .govt-gradient {
+    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(214 65% 28%) 100%);
+  }
+
+  .saffron-gradient {
+    background: linear-gradient(135deg, hsl(24 100% 56%) 0%, hsl(24 100% 45%) 100%);
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .card-hover {
+    @apply transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5;
+  }
+
+  .govt-shadow {
+    box-shadow: 0 4px 20px -4px rgba(10, 49, 97, 0.15);
+  }
+
+  .govt-border {
+    @apply border-l-4 border-l-primary;
+  }
+
+  .input-focus {
+    @apply focus:ring-2 focus:ring-primary/20 focus:border-primary;
+  }
+}
+
+@layer components {
+  .govt-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-header {
+    @apply text-2xl md:text-3xl font-bold text-foreground mb-6;
+  }
+
+  .stat-card {
+    @apply bg-card rounded-lg p-6 govt-shadow border border-border;
+  }
+}
